@@ -116,7 +116,8 @@ Remove all unused networks
 docker network prune
 
 ======================================================================================
-___________________ Selenium Grid_____________________
+Selenium Grid
+----------------
 : Grid is a part of Selenium Suite
 : Selenium Grid provides running multiple tests in parallel on multiple machines with different OS, multiple browsers with different versions, and different Operating Systems.
 : It has a concept of hub and node (machine). node machines are connected to Hub machine.
@@ -249,7 +250,7 @@ note: should not be more than thread-count="5"
 ***************** how to run Linux command in background ************************
 nohup <command>  (then it will allow to run more commands on same command prompt)
 
-====================================================================================================================
+==================================================================
 DOCKER:
 ------------
 what is docker, container and image ?
