@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="3" parallel="methods" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="3" parallel="methods" name="Test(failed)">
+    <classes>
+      <class name="grid_docker.FacebookHomePage1">
+        <methods>
+          <include name="test1"/>
+        </methods>
+      </class> <!-- grid_docker.FacebookHomePage1 -->
+      <class name="grid_docker.FacebookHomePage3">
+        <methods>
+          <include name="test3"/>
+        </methods>
+      </class> <!-- grid_docker.FacebookHomePage3 -->
+      <class name="grid_docker.FacebookHomePage2">
+        <methods>
+          <include name="test2"/>
+        </methods>
+      </class> <!-- grid_docker.FacebookHomePage2 -->
+      <class name="grid_docker.FacebookHomePage6">
+        <methods>
+          <include name="test6"/>
+        </methods>
+      </class> <!-- grid_docker.FacebookHomePage6 -->
+      <class name="grid_docker.FacebookHomePage5">
+        <methods>
+          <include name="test5"/>
+        </methods>
+      </class> <!-- grid_docker.FacebookHomePage5 -->
+      <class name="grid_docker.FacebookHomePage4">
+        <methods>
+          <include name="test4"/>
+        </methods>
+      </class> <!-- grid_docker.FacebookHomePage4 -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
