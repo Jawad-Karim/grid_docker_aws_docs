@@ -177,16 +177,14 @@ java -jar selenium-server-<version>.jar node --port 6666
 
 // start Hub and Nodes on different machines 		| works on same machine as well
 
-: For Node
-java -jar selenium-server-<version>.jar node --hub http://<hub-ip>:4444		(ip from window/mac/linux OS machines | first set instance inbound access as all traffic)
+: For Node  (ip from window/mac/linux OS machines | first set instance inbound access as all traffic)
+java -jar selenium-server-<version>.jar node --hub http://<hub-ip>:4444
 
 : Node 1
 java -jar selenium-server-<version>.jar node --hub http://<hub-ip>:4444
 
-
 : Node 2
 java -jar selenium-server-<version>.jar node --hub http://<hub-ip>:4444 --port 6666 
-
 
 Step 6) Now execute yor test | tests will be distributed by Hub to Nodes automatically based on browser type.
 
@@ -249,7 +247,7 @@ note: should not be more than thread-count="5"
 ***************** how to run Linux command in background ************************
 nohup <command>  (then it will allow to run more commands on same command prompt)
 
-==================================================================
+
 DOCKER:
 ------------
 what is docker, container and image ?
@@ -374,7 +372,7 @@ docker events      	Get real time events from the server
   docker network rm <networkName>         Remove one or more networks
 
 
-****** how to use Docker for test ******************
+**** how to use Docker for test ****
 : to run selenium test we need to download image from docker hub then we need to create container using the images.
 : then run your tests. and tests will be run on docker platform.
 
@@ -456,7 +454,7 @@ note: should not be more than thread-count="5"
 so, I need to get container id type in gitbash - (docker ps) then copy id and type in gitbash - (docker stop container-ID)
 2. then create Firefox or Edge container.
 
-********* run multilple tests in parallel using selenium Grid on Docker ***************
+*** run multiple tests in parallel using selenium Grid on Docker ***
 what is selenium Grid: 
 Selenium Grid is a component of the Selenium suite that helps us to run automated tests in parallel across multiple machines and browsers.
 selenium Grid contains two components (Hub and nodes). one Hub can have multiple nodes(machine). 
@@ -468,7 +466,7 @@ Solution is Grid with Docker.
 : containers are very light weight and run very fast.
 : the easiest way to use Docker by using docker-compose.yml file. step by step below.
 
-*********** Execution modes **************
+*** Execution modes ***
 //note: we need to update image version from docker hub. or use version as :latest before execution 
 
 Standalone
@@ -485,7 +483,7 @@ docker run -d -p 4444:4444 --shm-size="2g" selenium/standalone-chrome:4.32.0-202
 docker run -d -p 4444:4444 --shm-size="2g" selenium/standalone-edge:4.32.0-20250515
 
 Hub and Nodes
--------------------------------------------------------------------------------------------------------------------------
+--------------
 The Hub and Nodes will be created on different machines/VMs, they need to know each other's IPs to communicate properly. 
 If more than one node will be running on the same Machine/VM, they must be configured to expose different ports.
 
@@ -583,7 +581,7 @@ pause # pause is optional
 
 
 
-********* Docker network ******************
+*** Docker network ***
 Docker neworking allows Docker containers to communicate with each other, 
 with the Docker host/hub, and with external networks.
 
@@ -605,6 +603,7 @@ Network Types
 container to appear as physical device in network.
 
 Commands:
+-----------
   connect     Connect a container to a network
   create      Create a network
   disconnect  Disconnect a container from a network
@@ -624,8 +623,9 @@ from Docker hub if I download mySql image and this image then it will create a c
 Docker container jenkins
 --------------------------
 
-===================================================================================================================================
-*** AWS ****
+======================
+AWS
+-----
 1. Google - aws console - Create Account - Signup - login
 2. get A machine from aws: we need a machine up & running all the time for running our Jenkins job and so on...
 - compute - EC2(Elastic Cloud Compute) - Launch instance - do name(Jenkins machine/anything) - Check Your Region(example-Ohio)
@@ -664,7 +664,7 @@ sudo find / -name jenkins.war -exec rm -rf {} \;
 sudo kill -9 2527 (2527 is held process no) then run install command again.
 
 
-*** Java on AWS machine ****************
+*** Java on AWS machine ***
 : check java available or not
 java -version
 
@@ -722,7 +722,6 @@ Password4jenkins
 
 
 -----------------------------------------------------------------
-****** Machine Large IP: 18.224.24.100 **************
 
 : Jenkins url (2):  http://18.224.24.100:8080/
 : copy and save password	ceafc0ddf0244a7da155163c36d703af
@@ -730,8 +729,8 @@ Password4jenkins
 jenkins id: admin
 Password4jenkins
 
----------------------------------------------------------------------------
-******************** Docker with AWS ************************
+Docker with AWS
+----------------
 // install Docker on aws linux Grid machine
 sudo apt install docker.io
 
