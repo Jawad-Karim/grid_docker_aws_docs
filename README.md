@@ -115,7 +115,7 @@ docker network rm <network_name>
 Remove all unused networks 
 docker network prune
 
-======================================================================================
+=============================
 Selenium Grid
 ----------------
 : Grid is a part of Selenium Suite
