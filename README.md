@@ -577,10 +577,6 @@ pause # pause is optional
 : save as docker_compose_stop.bat 
 
 
-
-
-
-
 *** Docker network ***
 Docker neworking allows Docker containers to communicate with each other, 
 with the Docker host/hub, and with external networks.
@@ -648,33 +644,34 @@ instances - click on instance ID - connect - EC2 Instance Connect - select Conne
 // How to start/stop/delete instance: 
 : instances - select instance - instate state - start/stop/delete instance.
 
-// first run this command to update everything 
+// first run this command to update everything: 
 sudo apt update - (to update the current packages.)
 
-// How to find a file directory
+// How to find a file directory: 
 sudo find / -name jenkins.war
 
-// How delete a file
+// How delete a file: 
 sudo rm /var/lib/jenkins  OR sudo rm -rf /var/lib/jenkins
 
-// find a file then delete
+// find a file then delete: 
 sudo find / -name jenkins.war -exec rm -rf {} \;
 
-// How to solve problem- "held process" while installing 
+// How to solve problem- "held process" while installing: 
 sudo kill -9 2527 (2527 is held process no) then run install command again.
 
 
-*** Java on AWS machine ***
-: check java available or not
+Java on AWS machine
+--------------------------
+: check java available or not- 
 java -version
 
-: search for a specific java version
+: search for a specific java version- 
 sudo apt search jdk 21
 
-: install jdk
+: install jdk- 
 sudo apt install openjdk-21-jdk
 
-*** Maven on AWS machine *****************
+*** Maven on AWS machine ***
 : install maven use the commands below
 : sudo apt search maven (to see and choose a version)
 : sudo apt install maven
@@ -687,24 +684,25 @@ sudo apt install openjdk-21-jdk
 : we also can copy Java_Home path from here.
 
 
-*** jenkins on AWS machine ***************
+jenkins on AWS machine
+-----------------------------
 : download jenkins.war (copy jenkins war file download link)
 wget https://get.jenkins.io/war-stable/2.504.1/jenkins.war
 
-: check jenkins installed or not use ls (list of jar file)
+: check jenkins installed or not use ls (list of jar file)- 
 ls
 
-: run jenkins
+: run jenkins- 
 java -jar jenkins.war
 
-: stop jenkins
+: stop jenkins- 
 sudo service jenkins stop
 
-: Jenkins ID (1): 
+: Jenkins ID (1)-  
 : copy and save password
 d0858ae841974fda8946435d995adc26
 
-: open jenkins
+: open jenkins- 
 aws machine IP address:8080 	(instances - click instance ID - copy IP Address)
 http://3.144.106.6:8080/
 - it will show 'This site can’t be reached'
@@ -717,11 +715,8 @@ Password4jenkins
 * jenkins setup *
 //Java: Dashboard - Manage Jenkins - Tools - add jdk - JAVA_HOME (paste the java home path)
 //Maven: Dashboard - Manage Jenkins - Tools - add maven - MAVEN_HOME (paste the maven home path)
+// check version: add build step - execute shell - type- java -version or mvn -version.
 
-// check version: add build step - execute shell - type java -version or mvn -version.
-
-
------------------------------------------------------------------
 
 : Jenkins url (2):  http://18.224.24.100:8080/
 : copy and save password	ceafc0ddf0244a7da155163c36d703af
@@ -731,22 +726,22 @@ Password4jenkins
 
 Docker with AWS
 ----------------
-// install Docker on aws linux Grid machine
+// install Docker on aws linux Grid machine- 
 sudo apt install docker.io
 
-//Start and enable the Docker service
+//Start and enable the Docker service- 
 sudo systemctl start docker
 sudo systemctl enable docker
 OR
 sudo service docker start/stop
 
-// check docker- version, images, containers.
+// check docker- version, images, containers- 
 docker --version 
 sudo docker images
 sudo docker ps
 
 
-// download standalone docker images for browsers
+// download standalone docker images for browsers- 
 google - docker hub AI - selenium/video - README - copy standalone Chrome, Firefox, Edge images then type (sudo imageLink) in cmmand-prompt 
 sudo docker run -d -p 4444:4444 --shm-size="2g" selenium/standalone-chrome:4.32.0-20250505
 sudo docker run -d -p 4444:4444 --shm-size="2g" selenium/standalone-firefox:4.32.0-20250505
@@ -795,23 +790,23 @@ and check the execution instructions on top of each file.
 : go to that folder and open cmd/gitbash.
  
 
-2) Run 'docker-compose.yaml' file
+2) Run 'docker-compose.yml' file- 
  docker-compose up
  pause (add pause to see if there any problem happens. its optional)
 
-3) To check hub & nodes running state:   
+3) To check hub & nodes running state-   
   http://localhost:4444/grid/console
 
-4) To increase the number of nodes/containers 
+4) To increase the number of nodes/containers- 
    open another cmd/Gitbash command prompt then run the command below... 
    docker-compose scale chrome=3 		or ('chrome=total numbers of nodes' whatever I want)
 
 note: more nodes/containers reduce execution time in parallel testing.
 
-//check number of containers again 
+//check number of containers again-  
 docker ps  | or can see in http://localhost:4444/grid/console
 
-5) To stop the grid and cleanup the created containers.
+5) To stop the grid and cleanup the created containers- 
  docker-compose down
 or 
 # To stop the execution, hit Ctrl+C
