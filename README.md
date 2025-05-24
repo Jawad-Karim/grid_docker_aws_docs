@@ -719,7 +719,11 @@ Password4jenkins
 
 
 : Jenkins url (2):  http://18.224.24.100:8080/
-: copy and save password	ceafc0ddf0244a7da155163c36d703af
+: copy and save password
+--------------------------------
+9fdc97dd10404bf884d2d0be915adf4d
+
+: This may also be found at: /home/ubuntu/.jenkins/secrets/initialAdminPassword
 
 jenkins id: admin
 Password4jenkins
