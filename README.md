@@ -662,25 +662,35 @@ sudo kill -9 2527 (2527 is held process no) then run install command again.
 
 Java on AWS machine
 --------------------------
-: check java available or not- 
+: check java available or not-  
 java -version
 
-: search for a specific java version- 
+: search for a specific java version-  
 sudo apt search jdk 21
 
-: install jdk- 
+: install jdk-  
 sudo apt install openjdk-21-jdk
 
 *** Maven on AWS machine ***
+
 : install maven use the commands below
+
 : sudo apt search maven (to see and choose a version)
+
 : sudo apt install maven
+
 : check_ mvn -version
+
 : copy maven-home directory
+
 : go to maven folder- cd maven-home directory path 
+
 : type ls (we can see folders- bin boot conf lib man)
+
 : go to bin folder- cd bin
+
 : type ls (we can see folders- m2.conf  mvn  mvnDebug  mvnyjp)
+
 : we also can copy Java_Home path from here.
 
 
