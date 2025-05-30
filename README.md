@@ -115,8 +115,7 @@ docker network rm <network_name>
 Remove all unused networks   
 docker network prune  
   
-Selenium Grid  
-----------------  
+********************** Selenium Grid  ***************************************************  
 : Grid is a part of Selenium Suite  
 : Selenium Grid provides running multiple tests in parallel on multiple machines with different OS, multiple browsers with different versions, and different Operating Systems.  
 : It has a concept of hub and node (machine). node machines are connected to Hub machine.  
@@ -248,7 +247,7 @@ note: should not be more than thread-count="5"
 nohup <command>  (then it will allow to run more commands on same command prompt)  
 
 
-DOCKER:  
+**********************  DOCKER *******************************************************
 ------------  
 what is docker, container and image ?  
 : Docker is a S/W tool/platform that helps me to package my project with it's all depedencies, enviroment setup in a form of containers.  
@@ -619,8 +618,7 @@ Docker container jenkins
 --------------------------  
 
 
-AWS  
------  
+********************* AWS ****************************************************************************  
 1. Google - aws console - Create Account - Signup - login  
 2. get A machine from aws: we need a machine up & running all the time for running our Jenkins job and so on...  
 - compute - EC2(Elastic Cloud Compute) - Launch instance - do name(Jenkins machine/anything) - Check Your Region(example-Ohio)  
