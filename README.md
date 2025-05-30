@@ -720,11 +720,11 @@ Password4jenkins
 : first install Git pluggin in jenkins OR install in EC2 machine (sudo apt install git-core  
 : make sure apache maven compiler in pom.xml file   
 : ---------------------------------------  
-	<configuration>   
-		<source>21</source>   (java version no)   
-  		<target>21</target>      
-	</configuratio     
-: ---------------------------------------    
+	<configuration>  
+		<source>21</source>   (java version no)  
+  		<target>21</target>  
+	</configuration>  
+: ---------------------------------------  
 : enter git project url and root POM (pom.xml)     
 : Goals and options (clean test -Dusername=yourGitUserName -Dpassword=yourGitPassword  
 : apply - save - build now.  
