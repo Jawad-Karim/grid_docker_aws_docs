@@ -785,59 +785,58 @@ $ docker run -d -p 5555:5555 \
 // Docker Compose
 ------------------
 Docker Compose is the simplest way to start a Grid. Use the linked resources below, save them locally 
-and check the execution instructions on top of each file.
+and check the execution instructions on top of each file. 
 
-* first start Docker Desktop app *
-1) google - selenium docker - find docker-compose.yaml  # Ref: https://github.com/SeleniumHQ/docker-...
-: copy the docker-compose.yaml file content.
-: open notepad - paste - save as file name like 'docker-compose.yaml' and store into a folder. 
-: go to that folder and open cmd/gitbash.
+* first start Docker Desktop app * 
+1) google - selenium docker - find docker-compose.yaml  # Ref: https://github.com/SeleniumHQ/docker-... 
+: copy the docker-compose.yaml file content. 
+: open notepad - paste - save as file name like 'docker-compose.yaml' and store into a folder.  
+: go to that folder and open cmd/gitbash. 
  
 
-2) Run 'docker-compose.yml' file- 
- docker-compose up
- pause (add pause to see if there any problem happens. its optional)
+2) Run 'docker-compose.yml' file-  
+ docker-compose up 
+ pause (add pause to see if there any problem happens. its optional) 
+ 
+3) To check hub & nodes running state-    
+  http://localhost:4444/grid/console 
 
-3) To check hub & nodes running state-   
-  http://localhost:4444/grid/console
+4) To increase the number of nodes/containers-  
+   open another cmd/Gitbash command prompt then run the command below...  
+   docker-compose scale chrome=3 		or ('chrome=total numbers of nodes' whatever I want) 
 
-4) To increase the number of nodes/containers- 
-   open another cmd/Gitbash command prompt then run the command below... 
-   docker-compose scale chrome=3 		or ('chrome=total numbers of nodes' whatever I want)
+note: more nodes/containers reduce execution time in parallel testing. 
 
-note: more nodes/containers reduce execution time in parallel testing.
+//check number of containers again-   
+docker ps  | or can see in http://localhost:4444/grid/console 
 
-//check number of containers again-  
-docker ps  | or can see in http://localhost:4444/grid/console
+5) To stop the grid and cleanup the created containers-  
+ docker-compose down 
+or   
+# To stop the execution, hit Ctrl+C 
 
-5) To stop the grid and cleanup the created containers- 
- docker-compose down
-or 
-# To stop the execution, hit Ctrl+C
+// Now I will use the docker-compose file in Linux ubuntu machine for multiple browsers images 
+: google - docker hub - selenium/video - README - copy docker-compose file 
+: go to terminal type- vi fileName.yml 	(vi works like notepad).  
+: vi <do fine name> example- vi docker-compose.yml	(it will open text file named docker-compose.yml) 
+: press i (insert mode - it will allow to write on the file. 
+: paste copied docker-compose file - Esc - type (:wq) //it will save the yml file. 
+: type ls 	(to see docker file created or not) 
+: type cat docker-compose.yml (it will show the file content | cat stands for concatenate) 
+: now install yml file - type-( sudo apt  install docker-compose )  
+: type( docker-compose ) to check 
 
-// Now I will use the docker-compose file in Linux ubuntu machine for multiple browsers images
-: google - docker hub - selenium/video - README - copy docker-compose file
-: go to terminal type- vi fileName.yml 	(vi works like notepad). 
-: vi <do fine name> example- vi docker-compose.yml	(it will open text file named docker-compose.yml)
-: press i (insert mode - it will allow to write on the file.
-: paste copied docker-compose file - Esc - type (:wq) //it will save the yml file.
-: type ls 	(to see docker file created or not)
-: type cat docker-compose.yml (it will show the file content | cat stands for concatenate)
-: now install yml file - type-( sudo apt  install docker-compose ) 
-: type( docker-compose ) to check
+** now start/stop container ** 
+: To start execute this docker compose yml file run command- 
+docker compose -f docker-compose.yml up  OR  sudo docker-compose up -d (add -d for detouch mode) 
 
-** now start/stop container **
-: To start execute this docker compose yml file run command-
-docker compose -f docker-compose.yml up  OR  sudo docker-compose up -d (add -d for detouch mode)
-
-: To stop execute this docker compose yml file run command-
-docker compose -f docker-compose.yml down  OR  sudo docker-compose down
+: To stop execute this docker compose yml file run command- 
+docker compose -f docker-compose.yml down  OR  sudo docker-compose down 
 
 
 
-// How many docker containers per EC2 instance?
-It is common to fill an EC2 instance with 10-20 small Docker containers.
-
+// How many docker containers per EC2 instance? 
+It is common to fill an EC2 instance with 10-20 small Docker containers. 
 
 
 
