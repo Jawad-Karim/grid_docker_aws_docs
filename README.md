@@ -689,20 +689,20 @@ jenkins on AWS machine
 : download jenkins.war (copy jenkins war file download link)
 wget https://get.jenkins.io/war-stable/2.504.1/jenkins.war
 
-: check jenkins installed or not use ls (list of jar file)- 
+: check jenkins installed or not use ls (list of jar file)
 ls
 
-: run jenkins- 
-java -jar jenkins.war
+: run jenkins
+java -jar jenkins.war		|	nohup java -jar jenkins.war (to run jenkins on background)
 
-: stop jenkins- 
+: stop jenkins
 sudo service jenkins stop
 
-: Jenkins ID (1)-  
+: Jenkins ID (1): 
 : copy and save password
 d0858ae841974fda8946435d995adc26
 
-: open jenkins- 
+: open jenkins
 aws machine IP address:8080 	(instances - click instance ID - copy IP Address)
 http://3.144.106.6:8080/
 - it will show 'This site can’t be reached'
@@ -715,7 +715,21 @@ Password4jenkins
 * jenkins setup *
 //Java: Dashboard - Manage Jenkins - Tools - add jdk - JAVA_HOME (paste the java home path)
 //Maven: Dashboard - Manage Jenkins - Tools - add maven - MAVEN_HOME (paste the maven home path)
-// check version: add build step - execute shell - type- java -version or mvn -version.
+
+// check version: add build step - execute shell - type java -version or mvn -version.
+
+//create a job add a project from Git
+: first install Git pluggin in jenkins OR install in EC2 machine (sudo apt install git-core
+: make sure apache maven compiler in pom.xml file 
+	----------------------
+	<configuration>
+		<source>21</source>   (java version no)
+		<target>21</target>
+	</configuratio
+	----------------------
+: enter git project url and root POM (pom.xml)
+: Goals and options (clean test -Dusername=yourGitUserName -Dpassword=yourGitPassword
+: apply - save - build now.
 
 
 : Jenkins url (2):  http://18.224.24.100:8080/
