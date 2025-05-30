@@ -842,7 +842,7 @@ It is common to fill an EC2 instance with 10-20 small Docker containers.
 
 
 commands:
-: apt is a commandline package manager and provides commands for
+: apt is a command-line package manager and provides commands for
 Most used commands:
   sudo apt update - update the current packages.
   list - list packages based on package names
@@ -857,7 +857,7 @@ Most used commands:
   full-upgrade - upgrade the system by removing/installing/upgrading packages
   edit-sources - edit the source information file
   satisfy - satisfy dependency strings
-  kill        Kill one or more running containers
+  kill - Kill one or more running containers
 
 
 
