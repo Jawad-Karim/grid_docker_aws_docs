@@ -816,25 +816,38 @@ or
 # To stop the execution, hit Ctrl+C 
 
 // Now I will use the docker-compose file in Linux ubuntu machine for multiple browsers images 
+
 : google - docker hub - selenium/video - README - copy docker-compose file 
+
 : go to terminal type- vi fileName.yml 	(vi works like notepad).  
+
 : vi <do fine name> example- vi docker-compose.yml	(it will open text file named docker-compose.yml) 
+
 : press i (insert mode - it will allow to write on the file. 
+
 : paste copied docker-compose file - Esc - type (:wq) //it will save the yml file. 
+
 : type ls 	(to see docker file created or not) 
+
 : type cat docker-compose.yml (it will show the file content | cat stands for concatenate) 
+
 : now install yml file - type-( sudo apt  install docker-compose )  
+
 : type( docker-compose ) to check 
 
 ** now start/stop container ** 
+
 : To start execute this docker compose yml file run command- 
+
 docker compose -f docker-compose.yml up  OR  sudo docker-compose up -d (add -d for detouch mode) 
 
 : To stop execute this docker compose yml file run command- 
+
 docker compose -f docker-compose.yml down  OR  sudo docker-compose down 
 
 
 // How many docker containers per EC2 instance? 
+
 It is common to fill an EC2 instance with 10-20 small Docker containers. 
 
 
