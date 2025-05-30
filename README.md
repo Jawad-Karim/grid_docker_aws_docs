@@ -556,360 +556,315 @@ or
 ** Run Docker commands using bat file **  
 ------------------------------------------  
 in the above way we have to start/stop cmd and docker-compose file manually then we can run our testng.xml file 
-but using bat file we can directly run our testng.xml file.
-1) Create a (docker_compose_start.bat) file inte the folder where docker-compose.yml file is. 
-: open notepad - 
+but using bat file we can directly run our testng.xml file.  
+1) Create a (docker_compose_start.bat) file inte the folder where docker-compose.yml file is.   
+: open notepad -   
 
-cd C:\Users\jawad\OneDrive\Documents\2.Automation_tutorials\Docker_Selenium_Grid
-docker-compose up
-pause # pause is optional
+cd C:\Users\jawad\OneDrive\Documents\2.Automation_tutorials\Docker_Selenium_Grid  
+docker-compose up  
+pause # pause is optional  
 
-: save as docker_compose_start.bat
+: save as docker_compose_start.bat  
 
-2) Create a (docker_compose_start.bat) file inte the folder where docker-compose.yml file is. 
-: open notepad - 
+2) Create a (docker_compose_start.bat) file inte the folder where docker-compose.yml file is.   
+: open notepad -   
 
-cd C:\Users\jawad\OneDrive\Documents\2.Automation_tutorials\Docker_Selenium_Grid
-docker-compose down
-pause # pause is optional
+cd C:\Users\jawad\OneDrive\Documents\2.Automation_tutorials\Docker_Selenium_Grid  
+docker-compose down  
+pause # pause is optional  
 
-: save as docker_compose_stop.bat 
-
-
-*** Docker network ***
-Docker neworking allows Docker containers to communicate with each other, 
-with the Docker host/hub, and with external networks.
-
-Network Types
---------------
-: Bridge Network
-- the default network of Docker container in single host.
-- it does automatic DNS resolution for container names.
-
-: Host network
-- it is helpful to isolate the host network with Docker container network.
-
-: Overlay Network
-- useful while connecting containers running in different hosts.
-- this network feature is mostly used in Docker Swarm and Kubrnetes.
-
-: Macvlan Network
-- this will assign MAC address for each and every container and makes the 
-container to appear as physical device in network.
-
-Commands:
------------
-  connect     Connect a container to a network
-  create      Create a network
-  disconnect  Disconnect a container from a network
-  inspect     Display detailed information on one or more networks
-  ls          List networks
-  prune       Remove all unused networks
-  rm          Remove one or more networks
+: save as docker_compose_stop.bat   
 
 
+*** Docker network ***   
+Docker neworking allows Docker containers to communicate with each other,   
+with the Docker host/hub, and with external networks.  
 
-Docker container for mySql
----------------------------
-from Docker hub if I download mySql image and this image then it will create a container and this will have mySql database up & running.
+Network Types  
+--------------   
+: Bridge Network  
+- the default network of Docker container in single host.  
+- it does automatic DNS resolution for container names.   
+
+: Host network   
+- it is helpful to isolate the host network with Docker container network.   
+
+: Overlay Network   
+- useful while connecting containers running in different hosts.  
+- this network feature is mostly used in Docker Swarm and Kubrnetes.   
+
+: Macvlan Network   
+- this will assign MAC address for each and every container and makes the   
+container to appear as physical device in network.  
+
+Commands:  
+-----------  
+  connect     Connect a container to a network  
+  create      Create a network  
+  disconnect  Disconnect a container from a network  
+  inspect     Display detailed information on one or more networks  
+  ls          List networks  
+  prune       Remove all unused networks  
+  rm          Remove one or more networks  
 
 
 
-Docker container jenkins
---------------------------
+Docker container for mySql  
+---------------------------  
+from Docker hub if I download mySql image and this image then it will create a container and this will have mySql database up & running.  
 
 
-AWS
------
-1. Google - aws console - Create Account - Signup - login
-2. get A machine from aws: we need a machine up & running all the time for running our Jenkins job and so on...
-- compute - EC2(Elastic Cloud Compute) - Launch instance - do name(Jenkins machine/anything) - Check Your Region(example-Ohio)
-- Amazon Machine Image(AMI- every O/S is an AMI) - select Linux ubantu (cheapest one) - t2 extra large
-- Create new key pair for login into rented machine. do key name (my key: Jenkins Machine 2025) - Create.
+
+Docker container jenkins  
+--------------------------  
+
+
+AWS  
+-----  
+1. Google - aws console - Create Account - Signup - login  
+2. get A machine from aws: we need a machine up & running all the time for running our Jenkins job and so on...  
+- compute - EC2(Elastic Cloud Compute) - Launch instance - do name(Jenkins machine/anything) - Check Your Region(example-Ohio)  
+- Amazon Machine Image(AMI- every O/S is an AMI) - select Linux ubantu (cheapest one) - t2 extra large  
+- Create new key pair for login into rented machine. do key name (my key: Jenkins Machine 2025) - Create.  
 - click Launch instance - initiated instance - instance ID - connect - connection type(public/private) - create/select userName - connect.
-- a CloudShell command-prompt will be open. where we can write our commands.
-- now to run our tests we need to install java, maven, jenkins, 
+- a CloudShell command-prompt will be open. where we can write our commands.  
+- now to run our tests we need to install java, maven, jenkins,   
 
-*** Get two aws instance/machine- one for Jenkins_hub and another for node (For Grid execution).
+*** Get two aws instance/machine- one for Jenkins_hub and another for node (For Grid execution).  
 
-How to Connect to instance:
-** direct connection **
-instances - click on instance ID - connect - EC2 Instance Connect - select Connection type - select/create UserName - connect.
+How to Connect to instance:  
+** direct connection **  
+instances - click on instance ID - connect - EC2 Instance Connect - select Connection type - select/create UserName - connect.  
 
-** connect using SSH Client. follow instruction use cmd/Gitbash if OS is windows.
-: instances - start instance - click on instance ID - connect - SSH Client - Example - copy the command (it will connect using ssh)
-: go to downloads folder (where you downloaded your AMI key pair) - open cmd - paste SSH command - yes
+** connect using SSH Client. follow instruction use cmd/Gitbash if OS is windows.  
+: instances - start instance - click on instance ID - connect - SSH Client - Example - copy the command (it will connect using ssh)  
+: go to downloads folder (where you downloaded your AMI key pair) - open cmd - paste SSH command - yes  
 
-// How to start/stop/delete instance: 
-: instances - select instance - instate state - start/stop/delete instance.
+// How to start/stop/delete instance:   
+: instances - select instance - instate state - start/stop/delete instance.  
 
-// first run this command to update everything: 
-sudo apt update - (to update the current packages.)
+// first run this command to update everything:   
+sudo apt update - (to update the current packages.)  
 
-// How to find a file directory: 
-sudo find / -name jenkins.war
+// How to find a file directory:   
+sudo find / -name jenkins.war  
 
-// How delete a file: 
-sudo rm /var/lib/jenkins  OR sudo rm -rf /var/lib/jenkins
+// How delete a file:   
+sudo rm /var/lib/jenkins  OR sudo rm -rf /var/lib/jenkins  
 
-// find a file then delete: 
-sudo find / -name jenkins.war -exec rm -rf {} \;
+// find a file then delete:   
+sudo find / -name jenkins.war -exec rm -rf {} \;  
 
-// How to solve problem- "held process" while installing: 
-sudo kill -9 2527 (2527 is held process no) then run install command again.
-
-
-Java on AWS machine
---------------------------
-: check java available or not-  
-java -version
-
-: search for a specific java version-  
-sudo apt search jdk 21
-
-: install jdk-  
-sudo apt install openjdk-21-jdk
-
-*** Maven on AWS machine ***	
-: install maven use the commands below	
-: sudo apt search maven (to see and choose a version)	
-: sudo apt install maven	
-: check_ mvn -version	
-: copy maven-home directory	
-: go to maven folder- cd maven-home directory path 	
-: type ls (we can see folders- bin boot conf lib man)	
-: go to bin folder- cd bin	
-: type ls (we can see folders- m2.conf  mvn  mvnDebug  mvnyjp)	
-: we also can copy Java_Home path from here.
+// How to solve problem- "held process" while installing:   
+sudo kill -9 2527 (2527 is held process no) then run install command again.   
 
 
-jenkins on AWS machine
------------------------------
-: download jenkins.war (copy jenkins war file download link)
-wget https://get.jenkins.io/war-stable/2.504.1/jenkins.war
+Java on AWS machine  
+--------------------------  
+: check java available or not-    
+java -version  
 
-: check jenkins installed or not use ls (list of jar file)
-ls
+: search for a specific java version-    
+sudo apt search jdk 21  
 
-: run jenkins
-java -jar jenkins.war		|	nohup java -jar jenkins.war (to run jenkins on background)
+: install jdk-    
+sudo apt install openjdk-21-jdk  
 
-: stop jenkins
-sudo service jenkins stop
-
-: Jenkins ID (1): 
-: copy and save password
-d0858ae841974fda8946435d995adc26
-
-: open jenkins
-aws machine IP address:8080 	(instances - click instance ID - copy IP Address)
-http://3.144.106.6:8080/
-- it will show 'This site can’t be reached'
-- go to instance - security - click Security groups - Edit inbound rules - add rule - select All traffic, Anywher-IPv4 - Save rules.
-- now try again 3.144.106.6:8080  and jenkins home page will be open.
-- Create user name and password
-User name: Mdshah
-Password4jenkins
-
-* jenkins setup *
-
-//Java: Dashboard - Manage Jenkins - Tools - add jdk - JAVA_HOME (paste the java home path)
-
-//Maven: Dashboard - Manage Jenkins - Tools - add maven - MAVEN_HOME (paste the maven home path)
-
-// check version: add build step - execute shell - type java -version or mvn -version.
-
-//create a job add a project from Git
-
-: first install Git pluggin in jenkins OR install in EC2 machine (sudo apt install git-core
-
-: make sure apache maven compiler in pom.xml file 
-
-: ---------------------------------------
-
-	<configuration>
- 
-		<source>21</source>   (java version no)
-
-  		<target>21</target>
-    
-	</configuratio
- 
-: ---------------------------------------
-
-: enter git project url and root POM (pom.xml)
-
-: Goals and options (clean test -Dusername=yourGitUserName -Dpassword=yourGitPassword
-
-: apply - save - build now.
+*** Maven on AWS machine ***	  
+: install maven use the commands below	  
+: sudo apt search maven (to see and choose a version)	   
+: sudo apt install maven	  
+: check_ mvn -version	  
+: copy maven-home directory	  
+: go to maven folder- cd maven-home directory path 	  
+: type ls (we can see folders- bin boot conf lib man)	  
+: go to bin folder- cd bin	  
+: type ls (we can see folders- m2.conf  mvn  mvnDebug  mvnyjp)	  
+: we also can copy Java_Home path from here.  
 
 
-: Jenkins url (2):  http://18.224.24.100:8080/
-: copy and save password
---------------------------------
-9fdc97dd10404bf884d2d0be915adf4d
+jenkins on AWS machine  
+-----------------------------   
+: download jenkins.war (copy jenkins war file download link)  
+wget https://get.jenkins.io/war-stable/2.504.1/jenkins.war  
 
-: This may also be found at: /home/ubuntu/.jenkins/secrets/initialAdminPassword
+: check jenkins installed or not use ls (list of jar file)  
+ls  
 
-jenkins id: admin
-Password4jenkins
+: run jenkins  
+java -jar jenkins.war		|	nohup java -jar jenkins.war (to run jenkins on background)  
 
-Docker with AWS
-----------------
-// install Docker on aws linux Grid machine- 
-sudo apt install docker.io
+: stop jenkins  
+sudo service jenkins stop  
 
-//Start and enable the Docker service- 
-sudo systemctl start docker
-sudo systemctl enable docker
-OR
-sudo service docker start/stop
+: Jenkins ID (1):   
+: copy and save password  
+d0858ae841974fda8946435d995adc26  
 
-// check docker- version, images, containers- 
-docker --version 
-sudo docker images
-sudo docker ps
+: open jenkins  
+aws machine IP address:8080 	(instances - click instance ID - copy IP Address)  
+http://3.144.106.6:8080/  
+- it will show 'This site can’t be reached'  
+- go to instance - security - click Security groups - Edit inbound rules - add rule - select All traffic, Anywher-IPv4 - Save rules.  
+- now try again 3.144.106.6:8080  and jenkins home page will be open.  
+- Create user name and password  
+User name: Mdshah  
+Password4jenkins  
+
+* jenkins setup *  
+
+//Java: Dashboard - Manage Jenkins - Tools - add jdk - JAVA_HOME (paste the java home path)    
+//Maven: Dashboard - Manage Jenkins - Tools - add maven - MAVEN_HOME (paste the maven home path)  
+// check version: add build step - execute shell - type java -version or mvn -version.  
+//create a job add a project from Git  
+: first install Git pluggin in jenkins OR install in EC2 machine (sudo apt install git-core  
+: make sure apache maven compiler in pom.xml file   
+: ---------------------------------------  
+	<configuration>   
+		<source>21</source>   (java version no)   
+  		<target>21</target>      
+	</configuratio     
+: ---------------------------------------    
+: enter git project url and root POM (pom.xml)     
+: Goals and options (clean test -Dusername=yourGitUserName -Dpassword=yourGitPassword  
+: apply - save - build now.  
+
+: Jenkins url (2):  http://18.224.24.100:8080/  
+: copy and save password  
+--------------------------------  
+9fdc97dd10404bf884d2d0be915adf4d    
+: This may also be found at: /home/ubuntu/.jenkins/secrets/initialAdminPassword  
+
+jenkins id: admin  
+Password4jenkins  
+
+Docker with AWS  
+----------------  
+// install Docker on aws linux Grid machine-   
+sudo apt install docker.io  
+
+//Start and enable the Docker service-   
+sudo systemctl start docker  
+sudo systemctl enable docker  
+OR  
+sudo service docker start/stop  
+
+// check docker- version, images, containers-   
+docker --version   
+sudo docker images  
+sudo docker ps  
 
 
-// download standalone docker images for browsers- 
-google - docker hub AI - selenium/video - README - copy standalone Chrome, Firefox, Edge images then type (sudo imageLink) in cmmand-prompt 
-sudo docker run -d -p 4444:4444 --shm-size="2g" selenium/standalone-chrome:4.32.0-20250505
-sudo docker run -d -p 4444:4444 --shm-size="2g" selenium/standalone-firefox:4.32.0-20250505
-sudo docker run -d -p 4444:4444 --shm-size="2g" selenium/standalone-edge:4.32.0-20250505
+// download standalone docker images for browsers-   
+google - docker hub AI - selenium/video - README - copy standalone Chrome, Firefox, Edge images then type (sudo imageLink) in cmmand-prompt   
+sudo docker run -d -p 4444:4444 --shm-size="2g" selenium/standalone-chrome:4.32.0-20250505   
+sudo docker run -d -p 4444:4444 --shm-size="2g" selenium/standalone-firefox:4.32.0-20250505   
+sudo docker run -d -p 4444:4444 --shm-size="2g" selenium/standalone-edge:4.32.0-20250505  
 
-// Hub and Nodes
------------------
-The Hub and Nodes will be created on different machines/VMs, they need to know each other's IPs to communicate properly. 
-If more than one node will be running on the same Machine/VM, they must be configured to expose different ports.
+// Hub and Nodes  
+-----------------  
+The Hub and Nodes will be created on different machines/VMs, they need to know each other's IPs to communicate properly.   
+If more than one node will be running on the same Machine/VM, they must be configured to expose different ports.   
 
-: Hub - Machine/VM 1
-$ docker run -d -p 4442-4444:4442-4444 --name selenium-hub selenium/hub:4.32.0-20250515
+: Hub - Machine/VM 1  
+$ docker run -d -p 4442-4444:4442-4444 --name selenium-hub selenium/hub:4.32.0-20250515  
 
-: Node Chrome - Machine/VM 2
-macOS/Linux
-$ docker run -d -p 5555:5555 \		| or -p 5556:5556 \  (use new port number if multilple node for same browser)
-    --shm-size="2g" \
-    -e SE_EVENT_BUS_HOST=<ip-from-machine-1> \
-    -e SE_NODE_HOST=<ip-from-machine-2> \		(ip from window/mac/linux OS machines)
-    selenium/node-chrome:4.32.0-20250515		(specify browser version for specific OS)
+: Node Chrome - Machine/VM 2  
+macOS/Linux  
+$ docker run -d -p 5555:5555 \		| or -p 5556:5556 \  (use new port number if multilple node for same browser)  
+    --shm-size="2g" \  
+    -e SE_EVENT_BUS_HOST=<ip-from-machine-1> \  
+    -e SE_NODE_HOST=<ip-from-machine-2> \		(ip from window/mac/linux OS machines)  
+    selenium/node-chrome:4.32.0-20250515		(specify browser version for specific OS)  
 
-Windows PowerShell
-$ docker run -d -p 5555:5555 `
-    --shm-size="2g" `
-    -e SE_EVENT_BUS_HOST=<ip-from-machine-1> `
-    -e SE_NODE_HOST=<ip-from-machine-2> `
-    selenium/node-chrome:4.32.0-20250515
+Windows PowerShell  
+$ docker run -d -p 5555:5555 `  
+    --shm-size="2g" `  
+    -e SE_EVENT_BUS_HOST=<ip-from-machine-1> `  
+    -e SE_NODE_HOST=<ip-from-machine-2> `  
+    selenium/node-chrome:4.32.0-20250515  
 
-: Node Edge - Machine/VM 3
-macOS/Linux
-$ docker run -d -p 5555:5555 \
-    --shm-size="2g" \
-    -e SE_EVENT_BUS_HOST=<ip-from-machine-1> \
-    -e SE_NODE_HOST=<ip-from-machine-3> \
-    selenium/node-edge:4.32.0-20250515
+: Node Edge - Machine/VM 3  
+macOS/Linux  
+$ docker run -d -p 5555:5555 \  
+    --shm-size="2g" \  
+    -e SE_EVENT_BUS_HOST=<ip-from-machine-1> \  
+    -e SE_NODE_HOST=<ip-from-machine-3> \  
+    selenium/node-edge:4.32.0-20250515  
 
-// Docker Compose
-------------------
+// Docker Compose  
+------------------  
 Docker Compose is the simplest way to start a Grid. Use the linked resources below, save them locally 
-and check the execution instructions on top of each file. 
+and check the execution instructions on top of each file.   
 
-* first start Docker Desktop app * 
-1) google - selenium docker - find docker-compose.yaml  # Ref: https://github.com/SeleniumHQ/docker-... 
-: copy the docker-compose.yaml file content. 
-: open notepad - paste - save as file name like 'docker-compose.yaml' and store into a folder.  
-: go to that folder and open cmd/gitbash. 
+* first start Docker Desktop app *   
+1) google - selenium docker - find docker-compose.yaml  # Ref: https://github.com/SeleniumHQ/docker-...   
+: copy the docker-compose.yaml file content.   
+: open notepad - paste - save as file name like 'docker-compose.yaml' and store into a folder.    
+: go to that folder and open cmd/gitbash.   
  
 
-2) Run 'docker-compose.yml' file-  
- docker-compose up 
- pause (add pause to see if there any problem happens. its optional) 
+2) Run 'docker-compose.yml' file-    
+ docker-compose up   
+ pause (add pause to see if there any problem happens. its optional)   
  
-3) To check hub & nodes running state-    
-  http://localhost:4444/grid/console 
+3) To check hub & nodes running state-      
+  http://localhost:4444/grid/console   
 
-4) To increase the number of nodes/containers-  
-   open another cmd/Gitbash command prompt then run the command below...  
-   docker-compose scale chrome=3 		or ('chrome=total numbers of nodes' whatever I want) 
+4) To increase the number of nodes/containers-    
+   open another cmd/Gitbash command prompt then run the command below...    
+   docker-compose scale chrome=3 		or ('chrome=total numbers of nodes' whatever I want)   
 
-note: more nodes/containers reduce execution time in parallel testing. 
+note: more nodes/containers reduce execution time in parallel testing.   
+ 
+//check number of containers again-     
+docker ps  | or can see in http://localhost:4444/grid/console   
 
-//check number of containers again-   
-docker ps  | or can see in http://localhost:4444/grid/console 
+5) To stop the grid and cleanup the created containers-    
+ docker-compose down   
+or     
+# To stop the execution, hit Ctrl+C   
 
-5) To stop the grid and cleanup the created containers-  
- docker-compose down 
-or   
-# To stop the execution, hit Ctrl+C 
+// Now I will use the docker-compose file in Linux ubuntu machine for multiple browsers images   
+: google - docker hub - selenium/video - README - copy docker-compose file   
+: go to terminal type- vi fileName.yml 	(vi works like notepad).    
+: vi <do fine name> example- vi docker-compose.yml	(it will open text file named docker-compose.yml)   
+: press i (insert mode - it will allow to write on the file.   
+: paste copied docker-compose file - Esc - type (:wq) //it will save the yml file.   
+: type ls 	(to see docker file created or not)   
+: type cat docker-compose.yml (it will show the file content | cat stands for concatenate)   
+: now install yml file - type-( sudo apt  install docker-compose )    
+: type( docker-compose ) to check   
 
-// Now I will use the docker-compose file in Linux ubuntu machine for multiple browsers images 
-
-: google - docker hub - selenium/video - README - copy docker-compose file 
-
-: go to terminal type- vi fileName.yml 	(vi works like notepad).  
-
-: vi <do fine name> example- vi docker-compose.yml	(it will open text file named docker-compose.yml) 
-
-: press i (insert mode - it will allow to write on the file. 
-
-: paste copied docker-compose file - Esc - type (:wq) //it will save the yml file. 
-
-: type ls 	(to see docker file created or not) 
-
-: type cat docker-compose.yml (it will show the file content | cat stands for concatenate) 
-
-: now install yml file - type-( sudo apt  install docker-compose )  
-
-: type( docker-compose ) to check 
-
-** now start/stop container ** 
-
-: To start execute this docker compose yml file run command- 
-
+** now start/stop container **     
+: To start execute this docker compose yml file run command-   
 docker compose -f docker-compose.yml up  OR  sudo docker-compose up -d (add -d for detouch mode) 
 
-: To stop execute this docker compose yml file run command- 
-
+: To stop execute this docker compose yml file run command-   
 docker compose -f docker-compose.yml down  OR  sudo docker-compose down 
 
 
-// How many docker containers per EC2 instance? 
-
+// How many docker containers per EC2 instance?   
 It is common to fill an EC2 instance with 10-20 small Docker containers. 
+  
+commands:  
+: apt is a command-line package manager and provides commands for  
 
-
-
-commands:
-: apt is a command-line package manager and provides commands for
-
-Most used commands:
-
-  sudo apt update - update the current packages.  
-  
-  list - list packages based on package names   
-  
-  search - search in package descriptions   
-  
-  show - show package details   
-  
-  install - install packages   
-  
-  reinstall - reinstall packages   
-  
-  remove - remove packages   
-  
-  autoremove - automatically remove all unused packages   
-  
-  update - update list of available packages   
-  
-  upgrade - upgrade the system by installing/upgrading packages 
-  
-  full-upgrade - upgrade the system by removing/installing/upgrading packages
-  
-  edit-sources - edit the source information file
-  
-  satisfy - satisfy dependency strings
-  
-  kill - Kill one or more running containers
+Most used commands:    
+  sudo apt update - update the current packages.      
+  list - list packages based on package names       
+  search - search in package descriptions       
+  show - show package details       
+  install - install packages         
+  reinstall - reinstall packages         
+  remove - remove packages       
+  autoremove - automatically remove all unused packages       
+  update - update list of available packages       
+  upgrade - upgrade the system by installing/upgrading packages     
+  full-upgrade - upgrade the system by removing/installing/upgrading packages    
+  edit-sources - edit the source information file      
+  satisfy - satisfy dependency strings    
+  kill - Kill one or more running containers  
 
 
 
