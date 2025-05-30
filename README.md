@@ -618,7 +618,7 @@ Docker container jenkins
 --------------------------  
 
 
-********************* AWS ****************************************************************************  
+************************* AWS ****************************************************************************  ** **
 1. Google - aws console - Create Account - Signup - login  
 2. get A machine from aws: we need a machine up & running all the time for running our Jenkins job and so on...  
 - compute - EC2(Elastic Cloud Compute) - Launch instance - do name(Jenkins machine/anything) - Check Your Region(example-Ohio)  
@@ -668,7 +668,7 @@ sudo apt search jdk 21
 : install jdk-    
 sudo apt install openjdk-21-jdk  
 
-*** Maven on AWS machine ***	  
+Maven on AWS machine ** **    
 : install maven use the commands below	  
 : sudo apt search maven (to see and choose a version)	   
 : sudo apt install maven	  
