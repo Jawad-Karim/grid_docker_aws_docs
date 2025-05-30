@@ -834,37 +834,35 @@ docker compose -f docker-compose.yml up  OR  sudo docker-compose up -d (add -d f
 docker compose -f docker-compose.yml down  OR  sudo docker-compose down 
 
 
-
 // How many docker containers per EC2 instance? 
 It is common to fill an EC2 instance with 10-20 small Docker containers. 
 
 
 
 commands:
-
 : apt is a command-line package manager and provides commands for
 
 Most used commands:
 
-  sudo apt update - update the current packages.
+  sudo apt update - update the current packages.  
   
-  list - list packages based on package names
+  list - list packages based on package names   
   
-  search - search in package descriptions
+  search - search in package descriptions   
   
-  show - show package details
+  show - show package details   
   
-  install - install packages
+  install - install packages   
   
-  reinstall - reinstall packages
+  reinstall - reinstall packages   
   
-  remove - remove packages
+  remove - remove packages   
   
-  autoremove - automatically remove all unused packages
+  autoremove - automatically remove all unused packages   
   
-  update - update list of available packages
+  update - update list of available packages   
   
-  upgrade - upgrade the system by installing/upgrading packages
+  upgrade - upgrade the system by installing/upgrading packages 
   
   full-upgrade - upgrade the system by removing/installing/upgrading packages
   
