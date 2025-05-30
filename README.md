@@ -115,7 +115,7 @@ docker network rm <network_name>
 Remove all unused networks   
 docker network prune  
   
-********************** Selenium Grid  ***************************************************  
+********************** Selenium Grid  ***************************************************  ****
 : Grid is a part of Selenium Suite  
 : Selenium Grid provides running multiple tests in parallel on multiple machines with different OS, multiple browsers with different versions, and different Operating Systems.  
 : It has a concept of hub and node (machine). node machines are connected to Hub machine.  
